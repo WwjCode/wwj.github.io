@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button>点击停止关闭</button>
+    <img src="./img/angel.gif" alt="">
+    <script>
+        var img=document.querySelector('img');
+        var btn=document.querySelector('button');
+        function callbackOne(){
+            img.style.display='block';
+        }
+        setTimeout(callbackOne,3000);
+        function callbackTwo(){
+            img.style.display='none';
+        }
+        var timer=setTimeout(callbackTwo,6000);
+        btn.addEventListener('click',function(){
+            window.clearTimeout(timer);
+        });
+    </script>
+</body>
+</html>
